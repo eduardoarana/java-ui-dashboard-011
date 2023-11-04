@@ -56,7 +56,7 @@ public class Conexion {
             //com = (Connection) DriverManager.getConnection("jdbc:postgresql:SystemNom", "postgres", "1234");
             // Conexion con Sql Server 
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            com = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-9T6DKB3\\GALACSQL17:1433;"
+            com = DriverManager.getConnection("jdbc:sqlserver://DESKTOP-9T6DKB3\\SQLExpress:1433;"
                     + "databaseName=" + BD, "profit",
                     "profit");
             System.out.println("Exito ControlCenter");
@@ -78,11 +78,11 @@ public class Conexion {
         }
     }
 
-//    public static void main(String[] args) throws SQLException, Exception {
-//        Conexion s = new Conexion();
-//        Conexion.conexions();
-////        Conexion.cerrarConexion();
-//        Conexion.conexionControlCenter("ControlCenter", "admin", "andromeda");
-////      Conexion.cerrarConexion();
-//    }
+    public static void main(String[] args) throws SQLException, Exception {
+        Conexion s = new Conexion();
+        Conexion.conexions();
+//        Conexion.cerrarConexion();
+        Conexion.conexionControlCenter("ControlCenter", "profit", "profit");
+//      Conexion.cerrarConexion();
+    }
 }
