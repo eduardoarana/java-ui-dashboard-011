@@ -39,11 +39,17 @@ public class FTPModelo {
             String rutaDirectorioFactura,
             String rutaDirectorioPedidos,
             String rutaDirectorioCatalogo,
-            String conectar
+            String conectar,
+            String archivoFactura,
+            String archivoCatalogo,
+            String archivoPedido
+            
     ) {
-
         try {
             cstmt = con.prepareCall("{CALL pInsertarFTP("
+                    + "?,"
+                    + "?,"
+                    + "?,"
                     + "?,"
                     + "?,"
                     + "?,"
@@ -61,6 +67,10 @@ public class FTPModelo {
             cstmt.setString(6, rutaDirectorioPedidos);
             cstmt.setString(7, rutaDirectorioCatalogo);
             cstmt.setString(8, conectar);
+            cstmt.setString(9, archivoFactura);
+            cstmt.setString(10,archivoCatalogo);
+            cstmt.setString(11, archivoPedido);
+            
 
             resultado = cstmt.executeUpdate();
         } catch (SQLException ex) {
@@ -129,7 +139,6 @@ public class FTPModelo {
     }
 
     public static void main(String args[]) {
-
         int resul = 0;
         FTPModelo m = new FTPModelo();
         ArrayList<SaFTPBO> lista= m.pObtenerListadoDatos("demoa", "saFTP", "nameServidor", "", "2");
