@@ -7,6 +7,7 @@ import javaswingdev.form.VistaFTP;
 import javaswingdev.form.VistaFacturaCompras;
 import javaswingdev.form.VistaFacturaVenta;
 import javaswingdev.form.VistaInventario;
+import javaswingdev.form.VistaPedido;
 import javaswingdev.form.VistaUsuario;
 import javaswingdev.menu.EventMenuSelected;
 
@@ -44,7 +45,10 @@ public class Main extends javax.swing.JFrame {
 //                {
 //                    showForm(new VistaFacturaVenta(""));
 //                }
-                
+                else  if (index == 5 && indexSubMenu ==1)
+                {
+                    showForm(new VistaPedido());
+                }
                 // factura CXP 5 2  Factura CxP
                 else  if (index == 5 && indexSubMenu ==2)
                 {

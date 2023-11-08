@@ -23,6 +23,8 @@ import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import java.io.IOException;
 import javaswigdev.Beans.Archivos;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -224,6 +226,8 @@ public class LeerArchivoFtp {
 
         } catch (IOException e) {
             e.printStackTrace();
+             JOptionPane.showMessageDialog(new JFrame(), "Connection timed out: connect", "Software", JOptionPane.ERROR_MESSAGE);
+            
         } finally {
             try {
                 if (ftpClient.isConnected()) {
@@ -260,7 +264,6 @@ public class LeerArchivoFtp {
         } catch (IOException ex) {
             Logger.getLogger(LeerArchivoFtp.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         return resultado;
     }
 

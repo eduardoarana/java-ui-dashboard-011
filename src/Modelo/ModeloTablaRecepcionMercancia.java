@@ -7,7 +7,6 @@ package Modelo;
 
 import java.util.ArrayList;
 import javaswigdev.Beans.FacturaRenglonBO;
-import javaswigdev.Beans.InventarioBO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;

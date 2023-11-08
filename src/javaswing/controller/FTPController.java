@@ -38,7 +38,6 @@ public class FTPController implements ActionListener, MouseListener {
     public void actionPerformed(ActionEvent event) {
         int resultado = 0;
         if (event.getSource() == this.vista.btnGuardar) {
-
             if(vista.txtServidor.getText().isEmpty() || vista.txtUsuario.getText().isEmpty()||
                     vista.txtPasswor.getPassword().length==0 || vista.txtDirectorioFactura.getText().isEmpty() || vista.txtDirectorioCatalogo.getText().isEmpty()
                     || vista.txtDirectorioPedidos.getText().isEmpty()
@@ -54,7 +53,10 @@ public class FTPController implements ActionListener, MouseListener {
                     vista.txtDirectorioFactura.getText(),
                     vista.txtDirectorioPedidos.getText(),
                     vista.txtDirectorioCatalogo.getText(),
-                    "Activado"
+                    "Activado",
+                    vista.txtArchivoFactura.getText(),
+                    vista.txtArchivoCatalogo.getText(),
+                    vista.txtArchivoPedidos.getText()
             );
             if (resultado != 0) {
                 JOptionPane.showMessageDialog(new JFrame(), "Se ha Guardado Satisfactoriamente", "Software", JOptionPane.INFORMATION_MESSAGE);
@@ -111,6 +113,7 @@ public class FTPController implements ActionListener, MouseListener {
         vista.txtDirectorioFactura.setText(lista.get(0).getRutaDirectorioFactura());
         vista.txtDirectorioPedidos.setText(lista.get(0).getRutaDirectorioPedidos());
         vista.txtDirectorioCatalogo.setText(lista.get(0).getRutaDirectorioCatalogo());
+//        vista.txtArchivoCatalogo.setText(lista.get(0).get);
     }
 
     @Override

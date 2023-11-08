@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaswigdev.Beans.FacturaRenglonBO;
-import javaswingdev.form.VistaRecepcionMercancia;
+import javaswingdev.form.VistaFacturaCompras;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
 
@@ -28,7 +28,7 @@ import javax.swing.table.TableColumnModel;
 public class ChequearArchivoController implements ActionListener {
 
     JDialoChequearArchivos vista;
-    VistaRecepcionMercancia vistaRecepcionMercancia;
+    VistaFacturaCompras vistaRecepcionMercancia;
     LeerArchivoFTP.LeerArchivoFtp leerArchivoFtp;
     ModeloTablaRecepcionMercancia modeloTablaRecepcionMercancia = new ModeloTablaRecepcionMercancia();
     public FacturaRenglonBO facturaBO;
@@ -36,7 +36,7 @@ public class ChequearArchivoController implements ActionListener {
 
     public ChequearArchivoController(JDialoChequearArchivos vista) {
         this.vista = vista;
-        vistaRecepcionMercancia = new VistaRecepcionMercancia("");
+        vistaRecepcionMercancia = new VistaFacturaCompras("");
     }
 
     @Override
